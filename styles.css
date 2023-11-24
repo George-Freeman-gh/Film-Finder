@@ -1,0 +1,150 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body , html {
+    margin: 0;
+    background-color: #1C1C1C;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+
+
+header {
+ background-image: url('./Images/image\ 36-min.png');
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100vw;
+ height: 20vh;
+ padding: 0.5px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+
+ 
+
+ 
+
+}
+
+.header-container {
+  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+ padding: 0 1em;
+}
+
+.header-container > h1 {
+  
+  font-size: 2.25rem;
+  letter-spacing: -1.926px;
+  font-weight: 800;
+  margin: 0;
+  
+
+}
+
+.header-container h4, .header-container a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+form {
+    position: absolute;
+    background-color: white;
+    width: 80vw;
+    max-width: 600px;
+    height: 38px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 18vh;
+    border-radius: 6px;
+    border: none;
+    background-color: #2e2e2f;
+    
+    
+}
+
+form input {
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    width: 80%;
+    
+    border-radius: 6px 0 0 6px;
+    border: none;
+    background-color: #2e2e2f;
+    color: #A5A5A5;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding-left: 2.25em;
+    
+}
+
+input:focus {
+    outline: none;
+
+}
+
+form:focus-within {
+
+    filter: drop-shadow(0 0 0.25rem #f7f6f6);
+    
+}
+
+form button {
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    width: 20%;
+
+    height: 100%;
+    color: white;
+    background-color: #4B4B4B;
+    font-weight: 500;
+    border: none;
+    border-radius: 0 6px 6px 0;
+
+
+}
+
+form img {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-left: 0.5em;
+    
+    
+
+}
+
+
+.feed {  
+    background-color: #121212;;
+    height: 80vh;
+    width: 100%;
+    
+}
+
+.start-exploring {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-exploring > h5 {
+    color: #2E2E2F;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-top: 0.2em;
+}
