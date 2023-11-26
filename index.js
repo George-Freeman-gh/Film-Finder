@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const searchEL = document.getElementById("search-input");
 const feed = document.getElementById("feed");
 
-let page = 1;
+let page = 2;
 let searchedTitle = "";
 const movieIdArray = [];
 let pageStorage = [];
@@ -20,16 +20,34 @@ const getImdbIds = async (movieTitle, page) => {
 // This function is used to render the movie data onto the feed element.
 
 const renderPage = (pageStorage) => {
-  const currentPage = page - 1;
+  const currentPage = page - 2;
   feed.innerHTML = pageStorage[currentPage]
     .map((movie) => {
       return `<div class="movie-container">
                     <div class="poster-container">
-                        <img src="${movie.Poster}" alt="Movie Poster of the film: ${movie.Title}">
+                        <img src="${movie.Poster}" onerror="this.src='';" alt="Movie Poster of the film: ${movie.Title}">
                     </div>
                     <div class="movie-body">
+                      <div class="movie-name">
                         <h5 class="movie-title">${movie.Title}</h5>
+                        
+                          <i class="fa-solid fa-star fa-xs" style="color: #ffd91a;"></i>
+                          <span class="movie-rating">${movie.imdbRating}</span>
+                        
+                        
+                        
+                        
+                      </div>
+                      <div class="movie-more">
+                        <h5>${movie.Runtime}</h5>
+                        <h5>${movie.Genre}</h5>
+                        <h5>Watchlist</h5>
+                        
+
+                      </div>
+                      <div class="movie-desc">
                         <p class="movie-plot">${movie.Plot}</p>
+                      </div>
                     </div>
                     
               </div>`;
@@ -61,4 +79,5 @@ form.addEventListener("submit", (event) => {
   pageStorage = [];
   searchEL.value = "";
   getMovieData();
+  document.activeElement.blur();
 });
