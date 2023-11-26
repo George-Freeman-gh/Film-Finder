@@ -11,7 +11,7 @@ let pageStorage = [];
 
 const getImdbIds = async (movieTitle, page) => {
   const response = await fetch(
-    `http://www.omdbapi.com/?apikey=71102a61&s=${movieTitle}&page=${page}`
+    `https://www.omdbapi.com/?apikey=71102a61&s=${movieTitle}&page=${page}`
   );
   const data = await response.json();
   return data.Search.map((movie) => movie.imdbID);
@@ -63,7 +63,7 @@ const renderPage = (pageStorage) => {
 const getMovieData = async () => {
   const array = await getImdbIds(searchedTitle, page);
   const fetches = array.map((id) =>
-    fetch(`http://www.omdbapi.com/?apikey=71102a61&i=${id}&plot=short`)
+    fetch(`https://www.omdbapi.com/?apikey=71102a61&i=${id}&plot=short`)
   );
   const responses = await Promise.all(fetches);
   const data = await Promise.all(responses.map((res) => res.json()));
