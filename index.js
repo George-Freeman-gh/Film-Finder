@@ -31,9 +31,15 @@ const getImdbIds = async (movieTitle, page) => {
   const data = await response.json();
 
   if (data.Search) {
+    console.log(page)
     return data.Search.map((movie) => movie.imdbID);
   } else {
-    return console.log("unable to find movies");
+        
+        console.log("unable to find movies");
+   
+    
+    
+    
   }
 };
 
@@ -178,6 +184,7 @@ if (form) {
     const formData = new FormData(form);
     searchedTitle = formData.get("search-input");
     pageStorage = [];
+    page = 1;
     searchEL.value = "";
     getMovieData();
     document.activeElement.blur();
