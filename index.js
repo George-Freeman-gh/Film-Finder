@@ -31,16 +31,9 @@ const getImdbIds = async (movieTitle, page) => {
   const data = await response.json();
 
   if (data.Search) {
-    console.log(page)
+    
     return data.Search.map((movie) => movie.imdbID);
-  } else {
-        
-        console.log("unable to find movies");
-   
-    
-    
-    
-  }
+  } 
 };
 
 // This function is used to render the movie data onto the feed element.
